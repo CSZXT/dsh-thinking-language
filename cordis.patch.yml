@@ -1,0 +1,14 @@
+# Bundle layer for dsh-thinking-language.
+#
+# The plugin row is named through the package's `./plugin` subpath rather than
+# the bare package name: the harness loader resolves a plugin entry by specifier
+# and caches the module job for the process lifetime, so the specifier is what
+# makes a replaced build load a fresh JavaScript generation. Bumping this path
+# (or the package name) is how a code change reaches a live harness without a
+# restart; toggling the row off and on only re-runs the cached module.
+- insert:
+    - id: thinking-language
+      name: 'dsh-thinking-language/plugin'
+      config:
+        enabled: true
+        language: chinese

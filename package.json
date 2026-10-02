@@ -1,0 +1,44 @@
+{
+  "name": "dsh-thinking-language",
+  "version": "0.1.0",
+  "private": true,
+  "description": "让 DSH 的思考（reasoning）固定使用指定语言（默认中文）的 Host 插件：注册一个 system prompt 段落，不改变回复语言。",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./plugin": "./src/index.js",
+    "./instruction": "./src/instruction.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "test",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "system-prompt",
+    "reasoning",
+    "thinking"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.1",
+    "@deepseek-ai/schemastery": "*"
+  }
+}
